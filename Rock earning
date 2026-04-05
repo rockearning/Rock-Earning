@@ -53,69 +53,161 @@ input{padding:10px; margin:5px;}
 <!-- PROFILE / WITHDRAW -->
 <div class="box">
 <h2>👤 Withdraw</h2>
-<input type="text" id="upi" placeholder="Enter UPI ID"><br>
-<input type="file"><br>
-<button class="btn green" onclick="withdraw()">Withdraw</button><br><br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rock Earning</title>
 
-<a href="https://t.me/yourusername" target="_blank" class="btn blue">
-📩 Send Screenshot on Telegram
-</a>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #5f6dfc, #6a11cb);
+    color: white;
+    text-align: center;
+}
+
+.header {
+    padding: 20px;
+}
+
+.header h1 {
+    font-size: 32px;
+    background: linear-gradient(to right, orange, lime);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.container {
+    padding: 15px;
+}
+
+.card {
+    background: #f2f2f2;
+    color: black;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.app-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, red, orange);
+    border-radius: 20px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    font-size: 22px;
+}
+
+.step {
+    background: #ddd;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.btn {
+    display: block;
+    margin: 15px auto;
+    padding: 15px;
+    border-radius: 30px;
+    width: 90%;
+    max-width: 400px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-orange {
+    background: linear-gradient(to right, orange, orangered);
+    color: black;
+}
+
+.btn-blue {
+    background: #167db7;
+    color: white;
+}
+
+.telegram {
+    margin-top: 20px;
+}
+
+.telegram img {
+    width: 50px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="header">
+    <h1>Rock Earning</h1>
+    <p>Earn cashback by completing simple steps</p>
+</div>
+
+<div class="container">
+
+    <!-- WIN03 -->
+    <div class="card">
+        <div class="app-icon">W03</div>
+        <h2>🔥 Win03 App</h2>
+        <p>💸 ₹20 Cashback</p>
+
+        <div class="step">👉 Register & Download</div>
+        <div class="step">📱 Bind WhatsApp</div>
+        <div class="step">💰 First Withdrawal</div>
+        <div class="step">📸 Screenshot</div>
+
+        <a href="https://win03.club/login?mode=register&i=T8LmIY12" class="btn btn-orange">Register</a>
+        <a href="https://t.me/m_r_Rav" class="btn btn-blue">Send Screenshot</a>
+    </div>
+
+    <!-- ANTHENA -->
+    <div class="card">
+        <div class="app-icon" style="background: linear-gradient(45deg, #00c6ff, #0072ff);">ANT</div>
+        <h2>🚀 Anthena App</h2>
+        <p>💸 ₹30 Cashback</p>
+
+        <div class="step">👉 Register & Download</div>
+        <div class="step">📝 Complete Signup</div>
+        <div class="step">📸 Screenshot</div>
+
+        <a href="https://www.gathn.com/registerDesc?code=_6Hdt9P5DGNP" class="btn btn-orange">Register</a>
+        <a href="https://t.me/m_r_Rav" class="btn btn-blue">Send Screenshot</a>
+    </div>
+
+    <!-- TASKFLIX -->
+    <div class="card">
+        <div class="app-icon" style="background: linear-gradient(45deg, purple, pink);">TF</div>
+        <h2>🎬 Taskflix App</h2>
+        <p>💸 Earn Money</p>
+
+        <div class="step">👉 Register</div>
+        <div class="step">📸 Screenshot</div>
+
+        <a href="http://www.taskflix.in?promo_code=6934A6E7" class="btn btn-orange">Register</a>
+        <a href="https://t.me/m_r_Rav" class="btn btn-blue">Send Screenshot</a>
+    </div>
+
+    <!-- TELEGRAM -->
+    <div class="telegram">
+        <h2>Join Telegram</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg">
+        <p>@m_r_Rav</p>
+        <p>Send your Screenshot and UPI ID</p>
+    </div>
 
 </div>
 
-<script>
-// LOGIN
-function login(){
-  let user = document.getElementById("username").value;
-  localStorage.setItem("user", user);
-  document.getElementById("welcome").innerText = "Welcome " + user;
-  generateRef();
-}
-
-// WALLET
-let balance = localStorage.getItem("wallet") || 0;
-document.getElementById("wallet").innerText = balance;
-
-function addMoney(amount){
-  balance = parseInt(balance) + amount;
-  localStorage.setItem("wallet", balance);
-  document.getElementById("wallet").innerText = balance;
-}
-
-// REFERRAL
-function generateRef(){
-  let user = localStorage.getItem("user");
-  if(user){
-    let link = window.location.origin + window.location.pathname + "?ref=" + user;
-    document.getElementById("refLink").innerText = link;
-  }
-}
-
-let urlParams = new URLSearchParams(window.location.search);
-let ref = urlParams.get('ref');
-if(ref){
-  localStorage.setItem("referral", ref);
-}
-
-// SHARE
-function shareApp(){
-  let url = document.getElementById("refLink").innerText;
-  let text = "🔥 Earn Money Daily 💰\nJoin Fast👇\n" + url;
-
-  if(navigator.share){
-    navigator.share({text:text});
-  } else {
-    window.open("https://wa.me/?text=" + encodeURIComponent(text));
-  }
-}
-
-// WITHDRAW
-function withdraw(){
-  let upi = document.getElementById("upi").value;
-  alert("Request Sent! Screenshot Telegram par bhejo");
-}
-
-// TASK PAGE
+</body>
+</html>
 function openTask(){
   window.open("tasks.html", "_blank");
 }
