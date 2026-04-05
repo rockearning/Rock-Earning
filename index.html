@@ -1,74 +1,154 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rock Earning Champion 💰</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    body { font-family: 'Segoe UI', system-ui, sans-serif; }
-    .yellow-theme { background: linear-gradient(135deg, #facc15, #eab308); }
-    .card { transition: all 0.3s; }
-    .card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rock Earning</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #5f6dfc, #6a11cb);
+    color: white;
+    text-align: center;
+}
+
+.header {
+    padding: 20px;
+}
+
+.header h1 {
+    font-size: 32px;
+    background: linear-gradient(to right, orange, lime);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.container {
+    padding: 15px;
+}
+
+.card {
+    background: #f2f2f2;
+    color: black;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.app-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, red, orange);
+    border-radius: 20px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    font-size: 22px;
+}
+
+.step {
+    background: #ddd;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.btn {
+    display: block;
+    margin: 15px auto;
+    padding: 15px;
+    border-radius: 30px;
+    width: 90%;
+    max-width: 400px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-orange {
+    background: linear-gradient(to right, orange, orangered);
+    color: black;
+}
+
+.btn-blue {
+    background: #167db7;
+    color: white;
+}
+
+.telegram {
+    margin-top: 20px;
+}
+
+.telegram img {
+    width: 50px;
+}
+</style>
+
 </head>
-<body class="bg-yellow-50 text-gray-800">
+<body>
 
-  <!-- Header -->
-  <header class="yellow-theme py-8 shadow-lg">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <h1 class="text-5xl md:text-6xl font-bold text-yellow-900 tracking-tight">
-        ROCK EARNING CHAMPION 💰
-      </h1>
-      <p class="text-xl md:text-2xl mt-3 text-yellow-800 font-medium">
-        Paise Kamane ka Sabse Easy Tarika
-      </p>
+<div class="header">
+    <h1>Rock Earning</h1>
+    <p>Earn cashback by completing simple steps</p>
+</div>
+
+<div class="container">
+
+    <!-- WIN03 -->
+    <div class="card">
+        <div class="app-icon">W03</div>
+        <h2>🔥 Win03 App</h2>
+        <p>💸 ₹20 Cashback</p>
+
+        <div class="step">👉 Register & Download</div>
+        <div class="step">📱 Bind WhatsApp</div>
+        <div class="step">💰 First Withdrawal</div>
+        <div class="step">📸 Screenshot</div>
+
+        <a href="https://win03.club/login?mode=register&i=T8LmIY12" class="btn btn-orange">Register</a>
+        <a href="https://t.me/m_r_Rav" class="btn btn-blue">Send Screenshot</a>
     </div>
-  </header>
 
-  <div class="max-w-4xl mx-auto px-6 py-12">
+    <!-- ANTHENA -->
+    <div class="card">
+        <div class="app-icon" style="background: linear-gradient(45deg, #00c6ff, #0072ff);">ANT</div>
+        <h2>🚀 Anthena App</h2>
+        <p>💸 ₹30 Cashback</p>
 
-    <!-- Main Message -->
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold text-yellow-900 mb-4">
-        Click Link → Register & App Download Karo
-      </h2>
-      <p class="text-2xl font-semibold text-amber-700">
-        Earning Money Make → First Withdraw This App 🔥
-      </p>
-    </div}
+        <div class="step">👉 Register & Download</div>
+        <div class="step">📝 Complete Signup</div>
+        <div class="step">📸 Screenshot</div>
 
-// SHARE
-function shareApp(){
-  let url = document.getElementById("refLink").innerText;
-  let text = "🔥 Earn Money Daily 💰\nJoin Fast👇\n" + url;
+        <a href="https://www.gathn.com/registerDesc?code=_6Hdt9P5DGNP" class="btn btn-orange">Register</a>
+        <a href="https://t.me/m_r_Rav" class="btn btn-blue">Send Screenshot</a>
+    </div>
 
-  if(navigator.share){
-    navigator.share({text:text});
-  } else {
-    window.open("https://wa.me/?text=" + encodeURIComponent(text));
-  }
-}
+    <!-- TASKFLIX -->
+    <div class="card">
+        <div class="app-icon" style="background: linear-gradient(45deg, purple, pink);">TF</div>
+        <h2>🎬 Taskflix App</h2>
+        <p>💸 Earn Money</p>
 
-// WITHDRAW
-function withdraw(){
-  let upi = document.getElementById("upi").value;
-  alert("Request Sent! Screenshot Telegram par bhejo");
-}
+        <div class="step">👉 Register</div>
+        <div class="step">📸 Screenshot</div>
 
-// TASK PAGE
-function openTask(){
-  window.open("tasks.html", "_blank");
-}
+        <a href="http://www.taskflix.in?promo_code=6934A6E7" class="btn btn-orange">Register</a>
+        <a href="https://t.me/m_r_Rav" class="btn btn-blue">Send Screenshot</a>
+    </div>
 
-</script>
+    <!-- TELEGRAM -->
+    <div class="telegram">
+        <h2>Join Telegram</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg">
+        <p>@m_r_Rav</p>
+        <p>Send your Screenshot and UPI ID</p>
+    </div>
 
-</body>
-</html>
-<div class="box">
-  <h2>Taskflix</h2>
-  <a href="https://www.taskflix.in?promo_code=6934A6E7" target="_blank" class="btn pink">Open Task</a>
 </div>
 
 </body>
