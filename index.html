@@ -2,46 +2,39 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Tasks</title>
+<title>Rock Earning App</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
-body { font-family: Arial; background:#121212; color:white; text-align:center;}
+body { font-family: Arial; background:#121212; color:white; text-align:center; margin:0;}
+h1 { background:black; padding:15px; margin:0;}
 .box { background:#1e1e1e; margin:15px; padding:15px; border-radius:10px;}
-.btn { padding:10px 20px; border:none; border-radius:5px; color:white; text-decoration:none; display:inline-block; margin:5px;}
+.btn { padding:10px 20px; border:none; border-radius:5px; color:white; cursor:pointer; margin:5px;}
 .green{background:#00c853;}
-.orange{background:#ff9800;}
 .blue{background:#2196f3;}
+.orange{background:#ff9800;}
 .pink{background:#e91e63;}
+input{padding:10px; margin:5px;}
+.share-btn { background: #25D366; padding: 12px 25px; border: none; border-radius: 8px; font-size: 16px; margin: 20px; color:white;}
+a.btn { text-decoration:none; display:inline-block;}
 </style>
-
 </head>
 <body>
 
-<h1>🔥 Complete Tasks & Earn 💰</h1>
+<h1>🔥 Rock Earning 💰</h1>
 
+<!-- LOGIN -->
 <div class="box">
-  <h2>Anthena App</h2>
-  <a href="https://your-anthena-link.com" target="_blank" class="btn green">Open Task</a>
+<h2>Login</h2>
+<input type="text" id="username" placeholder="Enter Username">
+<button class="btn green" onclick="login()">Login</button>
+<p id="welcome"></p>
 </div>
 
+<!-- WALLET -->
 <div class="box">
-  <h2>Rupee Rush</h2>
-  <a href="https://your-rupeerush-link.com" target="_blank" class="btn orange">Open Task</a>
+<h2>💰 Wallet: ₹<span id="wallet">0</span></h2>
+<button class="btn blue" onclick="addMoney(50)">Earn ₹50</button>
 </div>
-
-<div class="box">
-  <h2>Win03</h2>
-  <a href="https://your-win03-link.com" target="_blank" class="btn blue">Open Task</a>
-</div>
-
-<div class="box">
-  <h2>Taskflix</h2>
-  <a href="https://www.taskflix.in?promo_code=6934A6E7" target="_blank" class="btn pink">Open Task</a>
-</div>
-
-</body>
-</html></div>
 
 <!-- REFER -->
 <div class="box">
@@ -54,7 +47,18 @@ body { font-family: Arial; background:#121212; color:white; text-align:center;}
 <!-- TASK BUTTON -->
 <div class="box">
 <h2>📝 Task</h2>
-<button class="btn orange" onclick="openTask()">🚀 Open Task</button>
+<button class="btn orange" onclick="showTasks()">🚀 Open Tasks</button>
+</div>
+
+<!-- TASKS LIST (hidden by default) -->
+<div class="box" id="tasksList" style="display:none;">
+<h2>All Earning Apps</h2>
+<div>
+  <a href="https://www.gathn.com/registerDesc?code=_6Hdt9P5DGNP" target="_blank" class="btn green">Anthena</a>
+  <a href="https://rockearning.github.io/rupeerush" target="_blank" class="btn orange">Rupee Rush</a>
+  <a href="https://win03.club/login?mode=register&i=T8LmIY12" target="_blank" class="btn blue">Win03</a>
+  <a href="https://www.taskflix.in?promo_code=6934A6E7" target="_blank" class="btn pink">Taskflix</a>
+</div>
 </div>
 
 <!-- PROFILE / WITHDRAW -->
@@ -62,6 +66,78 @@ body { font-family: Arial; background:#121212; color:white; text-align:center;}
 <h2>👤 Withdraw</h2>
 <input type="text" id="upi" placeholder="Enter UPI ID"><br>
 <input type="file"><br>
+<button class="btn green" onclick="withdraw()">Withdraw</button><br><br>
+<a href="https://t.me/yourusername" target="_blank" class="btn blue">📩 Send Screenshot on Telegram</a>
+</div>
+
+<script>
+// LOGIN
+function login(){
+  let user = document.getElementById("username").value;
+  if(!user){ alert("Enter username"); return; }
+  localStorage.setItem("user", user);
+  document.getElementById("welcome").innerText = "Welcome " + user;
+  generateRef();
+}
+
+// WALLET
+let balance = parseInt(localStorage.getItem("wallet")) || 0;
+document.getElementById("wallet").innerText = balance;
+
+function addMoney(amount){
+  balance += amount;
+  localStorage.setItem("wallet", balance);
+  document.getElementById("wallet").innerText = balance;
+}
+
+// REFERRAL
+function generateRef(){
+  let user = localStorage.getItem("user");
+  if(user){
+    let link = window.location.origin + window.location.pathname + "?ref=" + user;
+    document.getElementById("refLink").innerText = link;
+  }
+}
+
+// URL REF CHECK
+let urlParams = new URLSearchParams(window.location.search);
+let ref = urlParams.get('ref');
+if(ref){
+  localStorage.setItem("referral", ref);
+}
+
+// SHARE
+function shareApp(){
+  let url = document.getElementById("refLink").innerText;
+  let text = "🔥 Earn Money Daily 💰\nJoin Fast👇\n" + url;
+  if(navigator.share){
+    navigator.share({text:text});
+  } else {
+    window.open("https://wa.me/?text=" + encodeURIComponent(text));
+  }
+}
+
+// WITHDRAW
+function withdraw(){
+  let upi = document.getElementById("upi").value;
+  if(!upi){ alert("Enter UPI ID"); return; }
+  alert("Request Sent! Screenshot Telegram par bhejo");
+}
+
+// TASK BUTTON
+function showTasks(){
+  let taskDiv = document.getElementById("tasksList");
+  if(taskDiv.style.display === "none"){
+    taskDiv.style.display = "block";
+    taskDiv.scrollIntoView({behavior:"smooth"});
+  } else {
+    taskDiv.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html><input type="file"><br>
 <button class="btn green" onclick="withdraw()">Withdraw</button><br><br>
 
 <a href="https://t.me/yourusername" target="_blank" class="btn blue">
