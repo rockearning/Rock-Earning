@@ -2,186 +2,125 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rock Earning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial;
-    background: linear-gradient(135deg,#667eea,#764ba2);
-    color: white;
-    text-align: center;
-}
-
-.container {
-    padding: 15px;
-    max-width: 500px;
-    margin: auto;
-}
-
-/* Header */
-h1 {
-    font-size: 34px;
-    font-weight: 900;
-    background: linear-gradient(45deg,#ff0000,#ff9900,#ffff00,#00ffcc,#00ccff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
-}
-
-.subtitle {
-    font-size: 15px;
-    margin-bottom: 15px;
-}
-
-/* Card */
-.card {
-    background: white;
-    color: black;
-    margin: 12px 0;
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-/* Logo */
-.logo {
-    width: 55px;
-    height: 55px;
-    border-radius: 15px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 8px;
-}
-
-.win03 { background: linear-gradient(45deg,#ff6600,#ff0000); }
-.anthena { background: linear-gradient(45deg,#00c6ff,#0072ff); }
-.rush { background: linear-gradient(45deg,#00c853,#64dd17); }
-
-/* Brand */
-.brand {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-/* Cashback */
-.cashback {
-    font-size: 15px;
-    margin: 5px 0;
-}
-
-/* Steps */
-.steps p {
-    font-size: 14px;
-    font-weight: 600;
-    margin: 4px 0;
-    padding: 6px;
-    border-radius: 8px;
-    background: #f1f1f1;
-}
-
-/* Buttons */
-.btn {
-    display: block;
-    margin: 10px auto;
-    padding: 12px;
-    width: 90%;
-    background: linear-gradient(45deg,#ff9900,#ff6600);
-    color: black;
-    font-size: 15px;
-    font-weight: bold;
-    border-radius: 25px;
-    text-decoration: none;
-}
-
-.telegram {
-    background: #0088cc;
-    color: white;
-}
-
-/* Warning */
-.warning {
-    color: red;
-    font-size: 13px;
-    font-weight: bold;
-}
-
-/* Offer */
-.offer {
-    color: yellow;
-    font-size: 14px;
-    margin-top: 10px;
-}
+body { font-family: Arial; background:#121212; color:white; text-align:center; margin:0;}
+h1 { background:black; padding:15px; margin:0;}
+.box { background:#1e1e1e; margin:15px; padding:15px; border-radius:10px;}
+.btn { padding:10px 20px; border:none; border-radius:5px; color:white; cursor:pointer; margin:5px;}
+.green{background:#00c853;}
+.blue{background:#2196f3;}
+.orange{background:#ff9800;}
+.pink{background:#e91e63;}
+input{padding:10px; margin:5px;}
+.share-btn { background: #25D366; padding: 12px 25px; border: none; border-radius: 8px; font-size: 16px; margin: 20px; color:white;}
 </style>
 </head>
-
 <body>
 
-<div class="container">
+<h1>🔥 Rock Earning 💰</h1>
 
-<h1>💰 Rock Earning</h1>
-<p class="subtitle">Earn cashback by completing simple steps</p>
-
-<!-- Win03 -->
-<div class="card">
-<div class="logo win03">W03</div>
-<div class="brand">🔥 Win03 App</div>
-<div class="cashback">💸 ₹20 Cashback</div>
-
-<div class="steps">
-<p>👉 Register & Download</p>
-<p>📲 Bind WhatsApp</p>
-<p>💸 First Withdrawal</p>
-<p>📸 Screenshot</p>
+<!-- LOGIN -->
+<div class="box">
+<h2>Login</h2>
+<input type="text" id="username" placeholder="Enter Username">
+<button class="btn green" onclick="login()">Login</button>
+<p id="welcome"></p>
 </div>
 
-<a href="https://win03.club/login?mode=register&i=T8LmIY12" class="btn">Register</a>
-<a href="https://t.me/m_r_Rav" class="btn telegram">Send Screenshot</a>
+<!-- WALLET -->
+<div class="box">
+<h2>💰 Wallet: ₹<span id="wallet">0</span></h2>
+<button class="btn blue" onclick="addMoney(50)">Earn ₹50</button>
 </div>
 
-<!-- Anthena -->
-<div class="card">
-<div class="logo anthena">ANT</div>
-<div class="brand">🚀 Anthena App</div>
-<div class="cashback">💸 ₹30 Cashback</div>
-
-<div class="steps">
-<p>👉 Register & Download</p>
-<p>📝 Complete Signup</p>
-<p>📸 Screenshot</p>
+<!-- REFER -->
+<div class="box">
+<h2>👥 Refer & Earn</h2>
+<p>Share this link:</p>
+<p id="refLink"></p>
+<button class="share-btn" onclick="shareApp()">📤 Share</button>
 </div>
 
-<a href="https://www.gathn.com/registerDesc?code=_6Hdt9P5DGNP" class="btn">Register</a>
-<a href="https://t.me/m_r_Rav" class="btn telegram">Send Screenshot</a>
+<!-- TASK BUTTON -->
+<div class="box">
+<h2>📝 Task</h2>
+<button class="btn orange" onclick="openTask()">🚀 Open Task</button>
 </div>
 
-<!-- Rupee Rush -->
-<div class="card">
-<div class="logo rush">RR</div>
-<div class="brand">💸 Rupee Rush</div>
-<div class="cashback">💰 ₹40 Cashback</div>
+<!-- PROFILE / WITHDRAW -->
+<div class="box">
+<h2>👤 Withdraw</h2>
+<input type="text" id="upi" placeholder="Enter UPI ID"><br>
+<input type="file"><br>
+<button class="btn green" onclick="withdraw()">Withdraw</button><br><br>
 
-<div class="steps">
-<p>👉 Register</p>
-<p>📲 Download App</p>
-<p>🔑 Use Code: uvDELd</p>
-<p>📸 Screenshot</p>
-</div>
-
-<p class="warning">⚠️ Use code uvDELd otherwise NO cashback</p>
-
-<a href="https://rushws.top/landingPage.html?inviteCode=uvDELd" class="btn">Register</a>
-<a href="https://t.me/m_r_Rav" class="btn telegram">Send Screenshot</a>
-</div>
-
-<p class="offer">⚡ Limited Offer - Hurry Up!</p>
+<a href="https://t.me/yourusername" target="_blank" class="btn blue">
+📩 Send Screenshot on Telegram
+</a>
 
 </div>
+
+<script>
+// LOGIN
+function login(){
+  let user = document.getElementById("username").value;
+  localStorage.setItem("user", user);
+  document.getElementById("welcome").innerText = "Welcome " + user;
+  generateRef();
+}
+
+// WALLET
+let balance = localStorage.getItem("wallet") || 0;
+document.getElementById("wallet").innerText = balance;
+
+function addMoney(amount){
+  balance = parseInt(balance) + amount;
+  localStorage.setItem("wallet", balance);
+  document.getElementById("wallet").innerText = balance;
+}
+
+// REFERRAL
+function generateRef(){
+  let user = localStorage.getItem("user");
+  if(user){
+    let link = window.location.origin + window.location.pathname + "?ref=" + user;
+    document.getElementById("refLink").innerText = link;
+  }
+}
+
+let urlParams = new URLSearchParams(window.location.search);
+let ref = urlParams.get('ref');
+if(ref){
+  localStorage.setItem("referral", ref);
+}
+
+// SHARE
+function shareApp(){
+  let url = document.getElementById("refLink").innerText;
+  let text = "🔥 Earn Money Daily 💰\nJoin Fast👇\n" + url;
+
+  if(navigator.share){
+    navigator.share({text:text});
+  } else {
+    window.open("https://wa.me/?text=" + encodeURIComponent(text));
+  }
+}
+
+// WITHDRAW
+function withdraw(){
+  let upi = document.getElementById("upi").value;
+  alert("Request Sent! Screenshot Telegram par bhejo");
+}
+
+// TASK PAGE
+function openTask(){
+  window.open("tasks.html", "_blank");
+}
+
+</script>
 
 </body>
 </html>
