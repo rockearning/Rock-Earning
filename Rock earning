@@ -2,61 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Rock Earning</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-body { font-family: Arial; background:#121212; color:white; text-align:center; margin:0;}
-h1 { background:black; padding:15px; margin:0;}
-.box { background:#1e1e1e; margin:15px; padding:15px; border-radius:10px;}
-.btn { padding:10px 20px; border:none; border-radius:5px; color:white; cursor:pointer; margin:5px;}
-.green{background:#00c853;}
-.blue{background:#2196f3;}
-.orange{background:#ff9800;}
-.pink{background:#e91e63;}
-input{padding:10px; margin:5px;}
-.share-btn { background: #25D366; padding: 12px 25px; border: none; border-radius: 8px; font-size: 16px; margin: 20px; color:white;}
-</style>
-</head>
-<body>
-
-<h1>🔥 Rock Earning 💰</h1>
-
-<!-- LOGIN -->
-<div class="box">
-<h2>Login</h2>
-<input type="text" id="username" placeholder="Enter Username">
-<button class="btn green" onclick="login()">Login</button>
-<p id="welcome"></p>
-</div>
-
-<!-- WALLET -->
-<div class="box">
-<h2>💰 Wallet: ₹<span id="wallet">0</span></h2>
-<button class="btn blue" onclick="addMoney(50)">Earn ₹50</button>
-</div>
-
-<!-- REFER -->
-<div class="box">
-<h2>👥 Refer & Earn</h2>
-<p>Share this link:</p>
-<p id="refLink"></p>
-<button class="share-btn" onclick="shareApp()">📤 Share</button>
-</div>
-
-<!-- TASK BUTTON -->
-<div class="box">
-<h2>📝 Task</h2>
-<button class="btn orange" onclick="openTask()">🚀 Open Task</button>
-</div>
-
-<!-- PROFILE / WITHDRAW -->
-<div class="box">
-<h2>👤 Withdraw</h2>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rock Earning</title>
 
@@ -205,14 +150,6 @@ body {
     </div>
 
 </div>
-
-</body>
-</html>
-function openTask(){
-  window.open("tasks.html", "_blank");
-}
-
-</script>
 
 </body>
 </html>
