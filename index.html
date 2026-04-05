@@ -1,67 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-<meta charset="UTF-8">
-<title>Rock Earning App</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body { font-family: Arial; background:#121212; color:white; text-align:center; margin:0;}
-h1 { background:black; padding:15px; margin:0;}
-.box { background:#1e1e1e; margin:15px; padding:15px; border-radius:10px;}
-.btn { padding:10px 20px; border:none; border-radius:5px; color:white; cursor:pointer; margin:5px;}
-.green{background:#00c853;}
-.blue{background:#2196f3;}
-.orange{background:#ff9800;}
-.pink{background:#e91e63;}
-input{padding:10px; margin:5px;}
-.share-btn { background: #25D366; padding: 12px 25px; border: none; border-radius: 8px; font-size: 16px; margin: 20px; color:white;}
-a.btn { text-decoration:none; display:inline-block;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Earning Champion 💰</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body { font-family: 'Segoe UI', system-ui, sans-serif; }
+    .yellow-theme { background: linear-gradient(135deg, #facc15, #eab308); }
+    .card { transition: all 0.3s; }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+  </style>
 </head>
-<body>
+<body class="bg-yellow-50 text-gray-800">
 
-<h1>🔥 Rock Earning 💰</h1>
+  <!-- Header -->
+  <header class="yellow-theme py-8 shadow-lg">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h1 class="text-5xl md:text-6xl font-bold text-yellow-900 tracking-tight">
+        ROCK EARNING CHAMPION 💰
+      </h1>
+      <p class="text-xl md:text-2xl mt-3 text-yellow-800 font-medium">
+        Paise Kamane ka Sabse Easy Tarika
+      </p>
+    </div>
+  </header>
 
-<!-- LOGIN -->
-<div class="box">
-<h2>Login</h2>
-<input type="text" id="username" placeholder="Enter Username">
-<button class="btn green" onclick="login()">Login</button>
-<p id="welcome"></p>
-</div>
+  <div class="max-w-4xl mx-auto px-6 py-12">
 
-<!-- WALLET -->
-<div class="box">
-<h2>💰 Wallet: ₹<span id="wallet">0</span></h2>
-<button class="btn blue" onclick="addMoney(50)">Earn ₹50</button>
-</div>
-
-<!-- REFER -->
-<div class="box">
-<h2>👥 Refer & Earn</h2>
-<p>Share this link:</p>
-<p id="refLink"></p>
-<button class="share-btn" onclick="shareApp()">📤 Share</button>
-</div>
-
-<!-- TASK BUTTON -->
-<div class="box">
-<h2>📝 Task</h2>
-<button class="btn orange" onclick="showTasks()">🚀 Open Tasks</button>
-</div>
-
-<!-- TASKS LIST (hidden by default) -->
-<div class="box" id="tasksList" style="display:none;">
-<h2>All Earning Apps</h2>
-<div>
-  <a href="https://www.gathn.com/registerDesc?code=_6Hdt9P5DGNP" target="_blank" class="btn green">Anthena</a>
-  <a href="https://rockearning.github.io/rupeerush" target="_blank" class="btn orange">Rupee Rush</a>
-  <a href="https://win03.club/login?mode=register&i=T8LmIY12" target="_blank" class="btn blue">Win03</a>
-  <a href="https://www.taskflix.in?promo_code=6934A6E7" target="_blank" class="btn pink">Taskflix</a>
-</div>
-</div>
-
-<!-- PROFILE / WITHDRAW -->
+    <!-- Main Message -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-yellow-900 mb-4">
+        Click Link → Register & App Download Karo
+      </h2>
+      <p class="text-2xl font-semibold text-amber-700">
+        Earning Money Make → First Withdraw This App 🔥
+      </p>
+    </div<!-- PROFILE / WITHDRAW -->
 <div class="box">
 <h2>👤 Withdraw</h2>
 <input type="text" id="upi" placeholder="Enter UPI ID"><br>
